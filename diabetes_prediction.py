@@ -16,5 +16,12 @@ data.shape
 data['Outcome'].value_counts() # will show the output measurements 
 data.groupby('Outcome').mean() # will show the mean value for each column [O & 1]
 
+# Separating the output column from dataset
+X = data.drop('Outcome',axis = 1)
+Y = data['Outcome']
 
-
+# Need to Standardize the data 
+scaler = StandardScaler()
+scaler.fit(X)
+standardize_data = scaler.transform(X)
+print(standardize_data)
