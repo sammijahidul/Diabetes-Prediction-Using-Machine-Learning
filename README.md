@@ -9,7 +9,7 @@ Used Libraries to make this model:
 4) svm from sklearn
 5) Accuracy score from sklearn
 
-Accuracy score of testing data: over 0.76
+Accuracy score of testing data: over 0.77
 
 ![Screenshot 2021-10-19 at 12 35 00 AM](https://user-images.githubusercontent.com/56561463/137788560-04d7ed0e-336e-48ec-b469-e7f0b0668816.png)
 
