@@ -29,5 +29,15 @@ X = standardize_data
 Y = data['Outcome']
 
 # Splliting data into training set and test set
-X_train, Y_train, X_test, Y_test = train_test_split(X,Y, test_size=0.2, stratify=Y, 
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size=0.2, stratify=Y, 
                                                     random_state=2)
+
+print(X.shape, X_train.shape, X_test.shape)
+
+## Training the model process start from here
+# Training with support vector machine (svm)
+classifier = svm.SVC(kernel='linear')
+
+# traning the data with support vector machine classifier
+classifier.fit(X_train, Y_train)
+
