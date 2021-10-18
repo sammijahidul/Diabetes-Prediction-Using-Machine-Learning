@@ -25,3 +25,9 @@ scaler = StandardScaler()
 scaler.fit(X)
 standardize_data = scaler.transform(X)
 print(standardize_data)
+X = standardize_data
+Y = data['Outcome']
+
+# Splliting data into training set and test set
+X_train, Y_train, X_test, Y_test = train_test_split(X,Y, test_size=0.2, stratify=Y, 
+                                                    random_state=2)
