@@ -40,4 +40,27 @@ classifier = svm.SVC(kernel='linear')
 
 # traning the data with support vector machine classifier
 classifier.fit(X_train, Y_train)
+X
+# Model Evaluation
+X_train_prediction = classifier.predict(X_train)
+training_data_accuracy = accuracy_score(X_train_prediction, Y_train)
+print("The accuracy score of training data ", training_data_accuracy)
 
+X_test_prediction = classifier.predict(X_test)
+test_data_accuracy = accuracy_score(X_test_prediction, Y_test)
+print("The accuracy score of test data", test_data_accuracy)
+
+# Making a predictive system
+new_data = (1,89,66,23,94,28.1,0.167,21)
+new_data_as_numpy_array = np.asarray(new_data)
+new_data_reshaped = new_data_as_numpy_array.reshape(1, -1)
+std_data = scaler.transform(new_data_reshaped)
+print(std_data)
+
+prediction = classifier.predict(std_data)
+print(prediction)
+
+if (prediction[0] == 0):
+    print("The person is not diabetic")
+else:
+    print("This person is a diabetic")
